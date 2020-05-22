@@ -5,6 +5,8 @@ import TodoForm from './components/TodoForm';
 import PostList from './components/PostList';
 import Pagination from './components/Pagination';
 import queryString from 'query-string';
+import PostFiltersForm from './components/PostFiltersForm';
+import Clock from './components/Clock';
 
 function App() {
   const [todoList, setTodoList] = useState([
@@ -73,6 +75,16 @@ function App() {
     newTodoList.push(newTodo);
     setTodoList(newTodoList);
   }
+  
+  function handleFiltersChange(newFilters){
+    console.log('New Filter:', newFilters);
+    setFilters({
+      ...filters,
+      _page: 1,
+      title_like: newFilters.searchTerm,
+    });
+    
+  }
 
   return (
     <div className="App">
@@ -80,11 +92,15 @@ function App() {
       <TodoForm onSubmit={handleTodoFormSubmit} />
       <TodoList todos={todoList} onTodoClick={handleTodoClick} />
       <h2>Heloo effect</h2>
+      <PostFiltersForm onSubmit={handleFiltersChange}/>
       <PostList posts={postList} />
       <Pagination
         pagination={pagination}
         onPagechange={handlePageChange}
       />
+
+      <h2>React-hook CLock</h2>
+      <Clock/>
     </div>
   )
 }
