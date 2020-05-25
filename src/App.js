@@ -7,6 +7,7 @@ import Pagination from './components/Pagination';
 import queryString from 'query-string';
 import PostFiltersForm from './components/PostFiltersForm';
 import Clock from './components/Clock';
+import BetterClock from './components/BetterClock';
 
 function App() {
   const [todoList, setTodoList] = useState([
@@ -101,6 +102,8 @@ function App() {
 
       <h2>React-hook CLock</h2>
       <Clock/>
+      <h3>Better-clock</h3>
+      <BetterClock/>
     </div>
   )
 }
