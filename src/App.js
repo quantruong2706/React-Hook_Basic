@@ -8,6 +8,7 @@ import queryString from 'query-string';
 import PostFiltersForm from './components/PostFiltersForm';
 import Clock from './components/Clock';
 import BetterClock from './components/BetterClock';
+import MagicBox from './components/MagicBox';
 
 function App() {
   const [todoList, setTodoList] = useState([
@@ -104,6 +105,8 @@ function App() {
       <Clock/>
       <h3>Better-clock</h3>
       <BetterClock/>
+      <h2>Magic Box</h2>
+      <MagicBox/>
     </div>
   )
 }
